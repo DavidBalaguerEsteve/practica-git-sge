@@ -1,0 +1,47 @@
+<odoo>
+    <record id="proves_hola_mon_view_list" model="ir.ui.view">
+        <field name="name">proves.hola_mon.list</field>
+        <field name="model">proves.hola_mon</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="enter"/>
+                <field name="estat"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="proves_hola_mon_view_form" model="ir.ui.view">
+        <field name="name">proves.hola_mon.form</field>
+        <field name="model">proves.hola_mon</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="enter"/>
+                        <field name="descripcio"/>
+                        <field name="decimal"/>
+                        <field name="actiu"/>
+                        <field name="data_alta"/>
+                        <field name="data_hora"/>
+                        <field name="estat"/>
+                        <field name="fitxer"/>
+                        <field name="imatge" widget="image"/>
+                        <field name="contingut"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="proves_hola_mon_action" model="ir.actions.act_window">
+        <field name="name">Hola Món</field>
+        <field name="res_model">proves.hola_mon</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="proves_menu_root" name="Proves" sequence="10"/>
+    <menuitem id="proves_menu_hola_mon" name="Hola Món"
+              parent="proves_menu_root" action="proves_hola_mon_action"/>
+</odoo>

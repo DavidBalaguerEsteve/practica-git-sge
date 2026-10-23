@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="practica_git_sge.list">
+      <field name="name">practica_git_sge list</field>
+      <field name="model">practica_git_sge.practica_git_sge</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="practica_git_sge.action_window">
+      <field name="name">practica_git_sge window</field>
+      <field name="res_model">practica_git_sge.practica_git_sge</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="practica_git_sge.action_server">
+      <field name="name">practica_git_sge server</field>
+      <field name="model_id" ref="model_practica_git_sge_practica_git_sge"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="practica_git_sge" id="practica_git_sge.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="practica_git_sge.menu_1" parent="practica_git_sge.menu_root"/>
+    <menuitem name="Menu 2" id="practica_git_sge.menu_2" parent="practica_git_sge.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="practica_git_sge.menu_1_list" parent="practica_git_sge.menu_1"
+              action="practica_git_sge.action_window"/>
+    <menuitem name="Server to list" id="practica_git_sge" parent="practica_git_sge.menu_2"
+              action="practica_git_sge.action_server"/>
+-->
+  </data>
+</odoo>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_proves_hola_mon_user,proves.hola_mon user,model_proves_hola_mon,base.group_user,1,1,1,1
