@@ -1,0 +1,25 @@
+<odoo>
+    <record id="basquet_pavello_action" model="ir.actions.act_window">
+        <field name="name">Pavellons</field>
+        <field name="res_model">basquet.pavello</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="basquet_equip_action" model="ir.actions.act_window">
+        <field name="name">Equips</field>
+        <field name="res_model">basquet.equip</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="basquet_jugador_action" model="ir.actions.act_window">
+        <field name="name">Jugadors</field>
+        <field name="res_model">basquet.jugador</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="basquet_menu_root" name="Lliga de bàsquet" sequence="10"/>
+    <menuitem id="basquet_menu_pavellons" name="Pavellons"
+              parent="basquet_menu_root" action="basquet_pavello_action"/>
+    <menuitem id="basquet_menu_equips" name="Equips"
+              parent="basquet_menu_root" action="basquet_equip_action"/>
+    <menuitem id="basquet_menu_jugadors" name="Jugadors"
+              parent="basquet_menu_root" action="basquet_jugador_action"/>
+</odoo>

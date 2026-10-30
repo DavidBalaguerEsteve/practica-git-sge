@@ -16,7 +16,7 @@ services:
       - HOST=db
       - USER=odoo
       - PASSWORD=odoo
-    command: ["--dev=all", "-u", "practica_git_sge", "-d", "proves"]
+    command: ["--dev=all", "-u", "lliga_basquet", "-d", "proves"]
     tty: true
 
   db:
