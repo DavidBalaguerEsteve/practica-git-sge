@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vs_esdeveniment,esdeveniment user,model_venda_entrades_segures_esdeveniment,base.group_user,1,1,1,1
+access_vs_tiquet,tiquet user,model_venda_entrades_segures_tiquet,base.group_user,1,1,1,1
+access_vs_etiqueta,etiqueta user,model_venda_entrades_segures_etiqueta,base.group_user,1,1,1,1

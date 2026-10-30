@@ -1,0 +1,25 @@
+<odoo>
+    <record id="vs_esdeveniment_action" model="ir.actions.act_window">
+        <field name="name">Esdeveniments</field>
+        <field name="res_model">venda_entrades_segures.esdeveniment</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="vs_tiquet_action" model="ir.actions.act_window">
+        <field name="name">Tiquets</field>
+        <field name="res_model">venda_entrades_segures.tiquet</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="vs_etiqueta_action" model="ir.actions.act_window">
+        <field name="name">Etiquetes</field>
+        <field name="res_model">venda_entrades_segures.etiqueta</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="vs_menu_root" name="Venda d'entrades" sequence="10"/>
+    <menuitem id="vs_menu_esdeveniments" name="Esdeveniments"
+              parent="vs_menu_root" action="vs_esdeveniment_action"/>
+    <menuitem id="vs_menu_tiquets" name="Tiquets"
+              parent="vs_menu_root" action="vs_tiquet_action"/>
+    <menuitem id="vs_menu_etiquetes" name="Etiquetes"
+              parent="vs_menu_root" action="vs_etiqueta_action"/>
+</odoo>

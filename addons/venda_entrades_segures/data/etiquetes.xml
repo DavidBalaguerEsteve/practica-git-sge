@@ -1,0 +1,8 @@
+<odoo noupdate="1">
+    <record id="etiqueta_nominal" model="venda_entrades_segures.etiqueta">
+        <field name="name">Nominal</field>
+    </record>
+    <record id="etiqueta_no_reemborsable" model="venda_entrades_segures.etiqueta">
+        <field name="name">No Reemborsable</field>
+    </record>
+</odoo>
