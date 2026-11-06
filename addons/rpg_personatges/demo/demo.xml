@@ -1,0 +1,63 @@
+<odoo noupdate="1">
+
+    <!-- Classes: model creat en aquest mateix XML; es referencia amb ref -->
+    <record id="classe_guerrer" model="rpg.classe">
+        <field name="name">Guerrer</field>
+    </record>
+    <record id="classe_mag" model="rpg.classe">
+        <field name="name">Mag</field>
+    </record>
+
+    <!-- Personatge 1 -->
+    <record id="heroi_thalion" model="rpg.personatge">
+        <field name="name">Thalion</field>
+        <!-- Many2one amb ref -->
+        <field name="classe_id" ref="classe_guerrer"/>
+        <!-- Data calculada: avui menys 30 dies -->
+        <field name="data_creacio"
+               eval="(DateTime.today() - relativedelta(days=30)).strftime('%Y-%m-%d')"/>
+        <!-- Imatge carregada des del sistema de fitxers del mòdul -->
+        <field name="imatge" type="base64" file="rpg_personatges/static/img/heroi.png"/>
+        <!-- Many2many: la tripleta (0, 0, {...}) crea l'habilitat i la vincula -->
+        <field name="habilitat_ids" eval="[
+            (0, 0, {'name': 'Espasa llarga', 'nivell': 5}),
+            (0, 0, {'name': 'Escut protector', 'nivell': 3}),
+        ]"/>
+    </record>
+
+    <!-- Personatge 2 -->
+    <record id="heroi_lyria" model="rpg.personatge">
+        <field name="name">Lyria</field>
+        <field name="classe_id" ref="classe_mag"/>
+        <field name="data_creacio"
+               eval="(DateTime.today() - relativedelta(days=30)).strftime('%Y-%m-%d')"/>
+        <field name="imatge" type="base64" file="rpg_personatges/static/img/heroi.png"/>
+        <field name="habilitat_ids" eval="[
+            (0, 0, {'name': 'Bola de foc', 'nivell': 4}),
+            (0, 0, {'name': 'Teletransport', 'nivell': 2}),
+        ]"/>
+    </record>
+
+    <!-- Registres de control per a l'avaluació automàtica (un per requisit) -->
+    <record id="avaluador_img" model="rpg.avaluador">
+        <field name="nom_model">rpg.personatge</field>
+        <field name="ext_id">rpg_personatges.heroi_thalion</field>
+        <field name="requisit">img</field>
+    </record>
+    <record id="avaluador_ref" model="rpg.avaluador">
+        <field name="nom_model">rpg.personatge</field>
+        <field name="ext_id">rpg_personatges.heroi_thalion</field>
+        <field name="requisit">ref</field>
+    </record>
+    <record id="avaluador_dat" model="rpg.avaluador">
+        <field name="nom_model">rpg.personatge</field>
+        <field name="ext_id">rpg_personatges.heroi_thalion</field>
+        <field name="requisit">dat</field>
+    </record>
+    <record id="avaluador_m2m" model="rpg.avaluador">
+        <field name="nom_model">rpg.personatge</field>
+        <field name="ext_id">rpg_personatges.heroi_thalion</field>
+        <field name="requisit">m2m</field>
+    </record>
+
+</odoo>

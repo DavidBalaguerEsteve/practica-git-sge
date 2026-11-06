@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_matricula_curs,matricula.curs user,model_matricula_curs,base.group_user,1,1,1,1
+access_matricula_alumne,matricula.alumne user,model_matricula_alumne,base.group_user,1,1,1,1
+access_matricula_inscripcio,matricula.inscripcio user,model_matricula_inscripcio,base.group_user,1,1,1,1

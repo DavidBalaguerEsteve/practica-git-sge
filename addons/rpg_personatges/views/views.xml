@@ -1,0 +1,32 @@
+<odoo>
+    <record id="rpg_personatge_action" model="ir.actions.act_window">
+        <field name="name">Personatges</field>
+        <field name="res_model">rpg.personatge</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="rpg_habilitat_action" model="ir.actions.act_window">
+        <field name="name">Habilitats</field>
+        <field name="res_model">rpg.habilitat</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="rpg_classe_action" model="ir.actions.act_window">
+        <field name="name">Classes</field>
+        <field name="res_model">rpg.classe</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="rpg_avaluador_action" model="ir.actions.act_window">
+        <field name="name">Avaluadors</field>
+        <field name="res_model">rpg.avaluador</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="rpg_menu_root" name="RPG" sequence="10"/>
+    <menuitem id="rpg_menu_personatges" name="Personatges"
+              parent="rpg_menu_root" action="rpg_personatge_action"/>
+    <menuitem id="rpg_menu_habilitats" name="Habilitats"
+              parent="rpg_menu_root" action="rpg_habilitat_action"/>
+    <menuitem id="rpg_menu_classes" name="Classes"
+              parent="rpg_menu_root" action="rpg_classe_action"/>
+    <menuitem id="rpg_menu_avaluadors" name="Avaluadors"
+              parent="rpg_menu_root" action="rpg_avaluador_action"/>
+</odoo>

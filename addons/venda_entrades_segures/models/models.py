@@ -24,6 +24,8 @@ class Etiqueta(models.Model):
 class Tiquet(models.Model):
     _name = 'venda_entrades_segures.tiquet'
     _description = 'Tiquet'
+    
+    name = fields.Char(string='Nom')
 
     def _get_default_tags(self):
         nominal = self.env.ref('venda_entrades_segures.etiqueta_nominal')
@@ -61,7 +63,7 @@ class Tiquet(models.Model):
     @api.depends('comprador_id.name', 'esdeveniment_id')
     def _compute_codi_seguretat(self):
         for record in self:
-            nom = (record.comprador_id.name or '').upper().replace(' ', '_')
+            nom = record.comprador_id.name or ''
             record.codi_seguretat = f"{nom}-{record.esdeveniment_id.id or 0}"
 
     @api.depends('esdeveniment_id.data_inici')
